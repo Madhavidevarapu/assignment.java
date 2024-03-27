@@ -1,0 +1,63 @@
+abstract class Vehicle {
+    
+    public abstract void start();
+
+    
+    public abstract void stop();
+
+    
+    public void displayInfo() {
+        System.out.println("Vehicle information:");
+    }
+}
+
+
+class Car extends Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Car started");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Car stopped");
+    }
+}
+
+
+interface MusicalInstrument {
+    void playSound();
+}
+
+
+class Guitar implements MusicalInstrument {
+    @Override
+    public void playSound() {
+        System.out.println("Guitar playing...");
+    }
+}
+
+
+class Piano implements MusicalInstrument {
+    @Override
+    public void playSound() {
+        System.out.println("Piano playing...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Vehicle car = new Car();
+        car.displayInfo();
+        car.start();
+        car.stop();
+
+        
+        MusicalInstrument guitar = new Guitar();
+        guitar.playSound();
+
+        MusicalInstrument piano = new Piano();
+        piano.playSound();
+    }
+}
